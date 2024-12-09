@@ -1,0 +1,29 @@
+{
+  "name": "@superhero/openssl",
+  "version": "4.0.0",
+  "description": "OpenSSL CLI wrapper to create certificates and keys.",
+  "keywords": [
+    "certificate",
+    "openssl",
+    "ssl",
+    "tls",
+    "ca"
+  ],
+  "main": "index.js",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": "./index.js"
+  },
+  "scripts": {
+    "test": "node --trace-warnings --test --experimental-test-coverage"
+  },
+  "author": {
+    "name": "Erik Landvall",
+    "email": "erik@landvall.se"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/superhero/tls.git"
+  }
+}

@@ -1,0 +1,49 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Runtime
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Dependencies
+node_modules/
+
+# Cache
+.npm/
+
+# Archives
+*.tgz
+
+# Lock files
+*-lock-*
+*-lock.*
+*.lock
+
+# Environment variables
+.env
+.env*
+
+# Build
+build/
+dist/
+tmp/
+out/
+
+# Editors and IDEs
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Dev-specific files
+*TODO*

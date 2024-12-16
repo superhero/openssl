@@ -129,7 +129,8 @@ suite('@superhero/openssl', () =>
   test('Password Protected Private Key', async () => 
   {
     const
-      config          = { password : 'ABC def 0123 \\ \'"` !@#$%^&*()_+[]{}|;:,.<>?~-=' },
+      password        = Array.from({ length: 255 }, (_, i) => String.fromCharCode(i+1)).join(''),
+      config          = { password },
       openssl         = new OpenSSL(),
       hybridCA        = await openssl.hybrid(config),
       rootCA          = await openssl.root(config),

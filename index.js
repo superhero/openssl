@@ -374,7 +374,7 @@ export default class OpenSSL
   #conformPassword(password)
   {
     const
-      escape  = (pass) => pass.replace(/["'`\\]/g, '\\$&'),
+      escape  = (pass) => pass.replace(/["`\\]/g, '\\$&'),
       passout = 'string' === typeof password ? password : password?.output,
       passin  = 'string' === typeof password ? password : password?.input,
       output  = passout ? `-passout pass:"${escape(passout)}"` : '-nodes',

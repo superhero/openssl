@@ -315,14 +315,25 @@ export default class OpenSSL
 
   async #exec(cmd, timeout=5e3)
   {
-    const 
-      abortExec = new AbortController(),
-      timeoutId = setTimeout(() => abortExec.abort(new Error('Timeout')), timeout),
-      result    = await asyncExec(cmd, { signal:abortExec.signal, shell:'/bin/bash' })
-
-    clearTimeout(timeoutId)
-
-    return result
+    try
+    {
+      const 
+        abortExec = new AbortController(),
+        timeoutId = setTimeout(() => abortExec.abort(new Error('Timeout')), timeout),
+        result    = await asyncExec(cmd, { signal:abortExec.signal, shell:'/bin/bash' })
+  
+      clearTimeout(timeoutId)
+  
+      return result
+    }
+    catch(reason)
+    {
+      const error = new Error(`Failed to execute openssl command`)
+      error.code  = 'E_TLS_OPENSSL_EXEC'
+      error.cause = reason
+      error.cmd   = cmd
+      throw error
+    }
   }
 
   #conformSslOptions(config)

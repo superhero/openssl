@@ -110,7 +110,7 @@ export default class OpenSSL
 
       const
         sslOptions  = this.#conformSslOptions(config),
-        sslArgs     = '-x509 -out /dev/stdout -keyout /dev/stdout -text -batch -multivalue-rdn',
+        sslArgs     = '-x509 -out >(cat) -keyout >(cat) -text -batch -multivalue-rdn',
         result      = await this.#exec(`openssl req ${sslArgs} -days ${config.days} ${sslOptions}`, config.timeout)
 
       return this.#conformPemCert(result)
@@ -149,7 +149,7 @@ export default class OpenSSL
 
       const
         sslOptions  = this.#conformSslOptions(config),
-        sslArgs     = '-x509 -out /dev/stdout -keyout /dev/stdout -text -batch -multivalue-rdn',
+        sslArgs     = '-x509 -out >(cat) -keyout >(cat) -text -batch -multivalue-rdn',
         result      = await this.#exec(`openssl req ${sslArgs} -days ${config.days} ${sslOptions}`, config.timeout)
 
       return this.#conformPemCert(result)
@@ -196,7 +196,7 @@ export default class OpenSSL
 
       const
         sslOptions  = this.#conformSslOptions(config),
-        sslArgs     = '-new -out /dev/stdout -keyout /dev/stdout -text -batch -multivalue-rdn',
+        sslArgs     = '-new -out >(cat) -keyout >(cat) -text -batch -multivalue-rdn',
         result      = await this.#exec(`openssl req ${sslArgs} -days ${config.days} ${sslOptions}`, config.timeout)
 
       return this.#conformPemCert(result)
@@ -244,7 +244,7 @@ export default class OpenSSL
 
       const
         sslOptions  = this.#conformSslOptions(config),
-        sslArgs     = '-new -out /dev/stdout -keyout /dev/stdout -text -batch -multivalue-rdn',
+        sslArgs     = '-new -out >(cat) -keyout >(cat) -text -batch -multivalue-rdn',
         result      = await this.#exec(`openssl req ${sslArgs} -days ${config.days} ${sslOptions}`, config.timeout)
 
       return this.#conformPemCert(result)

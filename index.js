@@ -330,8 +330,8 @@ export default class OpenSSL
     {
       const error = new Error(`Failed to execute openssl command`)
       error.code  = 'E_TLS_OPENSSL_EXEC'
-      error.cause = reason
       error.cmd   = cmd
+      error.cause = reason
       throw error
     }
   }

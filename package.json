@@ -1,6 +1,6 @@
 {
   "name": "@superhero/openssl",
-  "version": "4.7.22",
+  "version": "4.7.23",
   "description": "OpenSSL CLI wrapper to create certificates and keys.",
   "keywords": [
     "certificate",
@@ -21,7 +21,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@superhero/audit": "4.7.22",
+    "@superhero/audit": "4.7.23",
     "@superhero/syntax-check": "0.0.2"
   },
   "author": {

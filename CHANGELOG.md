@@ -1,4 +1,8 @@
 ---
+#### v4.7.23
+---\n\nVersion alignment...
+
+---
 #### v4.7.22
 ---\n\nVersion alignment...
 
